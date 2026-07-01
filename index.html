@@ -258,7 +258,7 @@
                 <div class="promo-track">
                     <div class="promo-card pc-1"><div><h4>Refer &amp; Earn</h4><p>Get commission for every friend!</p></div><i class="fas fa-users promo-icon"></i></div>
                     <div class="promo-card pc-2"><div><h4>Daily Task</h4><p>Complete tasks and earn unlimited money.</p></div><i class="fas fa-clipboard-check promo-icon"></i></div>
-                    <div class="promo-card pc-3"><div><h4>Fast Withdraw</h4><p>Payment via bKash &amp; Nagad instantly.</p></div><i class="fas fa-wallet promo-icon"></i></div>
+                    <div class="promo-card pc-3"><div><h4>Fast Withdraw</h4><p>Payment via bKash, Nagad &amp; Mobile Recharge instantly.</p></div><i class="fas fa-wallet promo-icon"></i></div>
                     <div class="promo-card pc-4"><div><h4>Daily Bonus</h4><p>Login everyday to get free rewards.</p></div><i class="fas fa-gift promo-icon"></i></div>
                     <div class="promo-card pc-5"><div><h4>24/7 Support</h4><p>We are here to help you anytime.</p></div><i class="fas fa-headset promo-icon"></i></div>
                 </div>
@@ -356,14 +356,19 @@
                 <h3 style="color:var(--primary);">Withdraw Money</h3>
                 <span onclick="closeWithdrawModal()" style="font-size:2rem; cursor:pointer; color:#999;">×</span>
             </div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; margin-bottom:20px;">
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:20px;">
                 <div onclick="selectMethod('bKash', this)" class="menu-card" style="padding:15px;">
                     <i class="fas fa-mobile-alt" style="color:#E2136E; font-size:2rem; margin-bottom:5px;"></i>
-                    <div style="font-weight:700;">bKash</div>
+                    <div style="font-weight:700; font-size:0.9rem;">bKash</div>
                 </div>
                 <div onclick="selectMethod('Nagad', this)" class="menu-card" style="padding:15px;">
                     <i class="fas fa-wallet" style="color:#F7941D; font-size:2rem; margin-bottom:5px;"></i>
-                    <div style="font-weight:700;">Nagad</div>
+                    <div style="font-weight:700; font-size:0.9rem;">Nagad</div>
+                </div>
+                <div onclick="selectMethod('Mobile Recharge', this)" class="menu-card" style="padding:15px;">
+                    <i class="fas fa-sim-card" style="color:#2ecc71; font-size:2rem; margin-bottom:5px;"></i>
+                    <div style="font-weight:700; font-size:0.9rem;">Mobile</div>
+                    <div style="font-size:0.7rem; color:#999;">Recharge</div>
                 </div>
             </div>
             <div id="w-inputs" style="opacity:0.5; pointer-events:none;">
