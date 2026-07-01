@@ -362,8 +362,8 @@
                     <div style="font-weight:700;">bKash</div>
                 </div>
                 <div onclick="selectMethod('Nagad', this)" class="menu-card" style="padding:15px;">
-                    <i class="fa-solid fa-credit-card" style="color:#F7941D; font-size:2rem; margin-bottom:5px;"></i>
-                    <div style="font-weight:700;">Mobile Recharge</div>
+                    <i class="fas fa-wallet" style="color:#F7941D; font-size:2rem; margin-bottom:5px;"></i>
+                    <div style="font-weight:700;">Nagad</div>
                 </div>
             </div>
             <div id="w-inputs" style="opacity:0.5; pointer-events:none;">
@@ -748,8 +748,23 @@
 
             push(ref(db, 'withdrawals'), { userId, userName: userData.firstName, amount: amt, method: selectedMethod, account: acc, status: 'pending', timestamp: Date.now() });
             update(ref(db, `users/${userId}`), { balance: userData.balance - amt });
-            toast("Withdraw Requested!");
-            window.closeWithdrawModal();
+            toast("✅ Withdraw Request Submitted! Admin will review shortly.");
+            
+            // Clear form
+            document.getElementById('w-acc').value = '';
+            document.getElementById('w-amt').value = '';
+            selectedMethod = '';
+            
+            // Close modal and reset
+            setTimeout(() => {
+                window.closeWithdrawModal();
+                document.querySelectorAll('.menu-card').forEach(c => { 
+                    c.style.borderColor = '#eee'; 
+                    c.style.background = 'white'; 
+                });
+                document.getElementById('w-inputs').style.opacity = '0.5';
+                document.getElementById('w-inputs').style.pointerEvents = 'none';
+            }, 1000);
         };
 
         init();
